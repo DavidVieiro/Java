@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 package notasfaltas1;
-
 import java.util.Scanner;
-
 /**
  *
  * @author dam132
@@ -31,7 +29,11 @@ public class NotasFaltas1 {
         // Introducir Numero de Faltas
         System.out.println("Introduce el numero de faltas: ");
         int faltas = reader.nextInt(); // Scans the next token of the input as an int.
+        // nota = 0
+        // faltas = 0
+        // nota_falta = 0
         double nota_falta;
+        
         if ( nota > 3 && nota <= 10 ) {
             if ( faltas < 5 ) {
                 System.out.println("La nota es " + nota);
