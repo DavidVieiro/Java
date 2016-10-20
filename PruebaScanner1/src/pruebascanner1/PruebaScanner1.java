@@ -15,9 +15,9 @@ import java.util.Scanner;
 public class PruebaScanner1 {
     public static void main(String[] args) {
         // Se introducen los datos
-        Scanner reader = new Scanner(System.in);
+        Scanner reader = new Scanner(System.in); // creacion del objeto reader
         System.out.println("Introduce la velocidad en Km/h para convertirla a m/s:");
-        float velocidad = reader.nextInt();
+        float velocidad = reader.nextFloat(); // objeto.metodo()
         
         velocidad = (velocidad * 1000) / 3600;
         
