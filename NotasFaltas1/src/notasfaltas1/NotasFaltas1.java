@@ -32,16 +32,16 @@ public class NotasFaltas1 {
         // nota = 0
         // faltas = 0
         // nota_falta = 0
-        double nota_falta;
+        float nota_falta;
         
         if ( nota > 3 && nota <= 10 ) {
             if ( faltas < 5 ) {
                 System.out.println("La nota es " + nota);
             }
             else if ( faltas >= 5 && faltas <= 10 ) {
-                nota_falta = nota - 0.5;
+                nota_falta = nota - 0.5F; // System.out.println("La nota es " + (float)(nota - 0.5));
                 System.out.println("La nota es " + nota_falta );
-//                System.out.println("La nota es " + (float)(nota - 0.5));
+
             }
             else if ( faltas >= 10 && faltas <= 20 ) {
                 nota_falta = nota - 1;
