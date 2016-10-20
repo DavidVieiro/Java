@@ -11,7 +11,7 @@ package ejercicioatletas1;
 public class EjercicioAtletas1 {
     public static void main(String[] args) {
         
-
+        // falta introducir el Scanner
         float tiempo = 0;
         int edad = 0;
         String genero = null;
