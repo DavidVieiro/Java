@@ -17,7 +17,7 @@ public class LeerMientrasNoNegativo1 {
     public static void main(String[] args) {
         
         int x = 0;
-        int n = 0;
+        int n;
         
         do {
             // introducir el Scanner
