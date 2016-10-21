@@ -27,7 +27,7 @@ public class LeerMientrasNoNegativo1 {
             n = reader.nextInt();
             // si el entero es positivo, sumarle 1 al autoincremento
             if ( n >= 0 ) {
-                x = ++x;
+                ++x;
             }
         } while ( n >= 0);
         // mostrar el numero de numeros procesados
