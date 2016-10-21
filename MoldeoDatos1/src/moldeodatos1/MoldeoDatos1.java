@@ -24,11 +24,11 @@ public class MoldeoDatos1 {
         // z = (200 * y + x); //
         z = (float) (200 * y + x); // hacer con y sin moldeo
         
-        System.out.println("valor float(z): " + z);
-        System.out.println("valor double(z): " + (double)z);
-        System.out.println("valor int(z): " + (int)z);
-        System.out.println("valor byte(z): " + (byte)z);
-        System.out.println("Valor double(y): " + (double)y);
+        System.out.println("1. valor float(z): " + z);
+        System.out.println("2. valor double(z): " + (double)z);
+        System.out.println("3. valor int(z): " + (int)z);
+        System.out.println("4. valor byte(z): " + (byte)z);
+        System.out.println("5. Valor double(y): " + (double)y);
         
         // int d = (float)x / 2; // error perdida de datos
         int d = (int) ((float)x / 2); // se necesita indicarle que el resultado sera (int)
