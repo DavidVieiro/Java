@@ -9,6 +9,10 @@ import java.util.Scanner;
  *
  * @author dam132
  */
+/*
+ * Leer numeros mientras no se lea un valor negativo.
+ * Indicar cuantos numeros se procesan
+ */
 public class LeerMientrasNoNegativo1 {
     public static void main(String[] args) {
         
@@ -18,17 +22,15 @@ public class LeerMientrasNoNegativo1 {
         do {
             // introducir el Scanner
             Scanner reader = new Scanner(System.in);
-            
+            // introducir el entero
             System.out.println("Introduce un numero entero:");
             n = reader.nextInt();
-            
-            if ( n > 0 ) {
+            // si el entero es positivo, sumarle 1 al autoincremento
+            if ( n >= 0 ) {
                 x = ++x;
             }
-            
-            
-        } while ( n > 0);
-        
+        } while ( n >= 0);
+        // mostrar el numero de numeros procesados
         System.out.println("Se han procesado " + x + " numeros.");
     }
     
