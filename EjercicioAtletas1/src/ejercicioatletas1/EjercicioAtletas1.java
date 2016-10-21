@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ejercicioatletas1;
+import java.util.Scanner;
 /**
  *
  * @author dam132
@@ -11,23 +12,44 @@ package ejercicioatletas1;
 public class EjercicioAtletas1 {
     public static void main(String[] args) {
         
-        // falta introducir el Scanner
-        float tiempo = 0;
-        int edad = 0;
-        String genero = null;
+        // introducir el Scanner
+        Scanner reader = new Scanner(System.in);
+        
+        // edad
+        System.out.println("Introduce la edad del atleta:");
+        int edad = reader.nextInt();
+        
+        // genero
+        System.out.println("Introduce el genero del atleta ( Hombre - Mujer ):");
+        String genero = reader.next();
+        
+        // tiempo
+        System.out.println("Introduce el Tiempo que hizo el atleta:");
+        float tiempo = reader.nextFloat();
+        
+        // ha sido seleccionado, falso por defecto
         boolean seleccionado = false;
         // string cadena;
         // cadena=objeto.next();
         // char car= cadenar.charAt(0);
-        if ( genero == "H" || genero == "Hombre" ) {
-            if ( edad <= 40 && tiempo <= 1.5 ) {
+        
+        if ( "Hombre".equals(genero)
+          || "H".equals(genero)
+          || "hombre".equals(genero)
+          || "h".equals(genero)
+           ) {
+            if ( edad > 0 && edad <= 40 && tiempo <= 1.5 ) {
                seleccionado = true;
             }
-            else if ( edad > 40 && tiempo <= 1.75 ) {
+            else if ( edad > 0 && edad > 40 && tiempo <= 1.75 ) {
                seleccionado = true;
             }
         }
-        else if ( genero == "M" || genero == "Mujer" ) {
+        else if ( edad > 0 && "Mujer".equals(genero)
+               || edad > 0 && "M".equals(genero)
+               || edad > 0 && "mujer".equals(genero)
+               || edad > 0 && "m".equals(genero)
+                ) {
             if ( tiempo <= 1.8 ) {
                 seleccionado = true;
             }
@@ -39,7 +61,6 @@ public class EjercicioAtletas1 {
         else {
             System.out.println("No has sido seleccionado");
         }
-            
         
     }
     
