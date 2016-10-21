@@ -29,7 +29,7 @@ public class LeerMientrasNoNegativo1 {
             if ( n >= 0 ) {
                 ++x;
             }
-        } while ( n >= 0);
+        } while ( n >= 0); // el punto y coma es importante
         // mostrar el numero de numeros procesados
         System.out.println("Se han procesado " + x + " numeros.");
     }
