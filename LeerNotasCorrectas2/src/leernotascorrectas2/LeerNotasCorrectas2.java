@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package leernotascorrectas1;
+package leernotascorrectas2;
 
 import java.util.Scanner;
 
@@ -11,30 +11,27 @@ import java.util.Scanner;
  *
  * @author dam132
  */
-// Leer notas correctas y mostrar la media. Solo numeros del 1 al 10.
-public class LeerNotasCorrectas1 {
+public class LeerNotasCorrectas2 {
     public static void main(String[] args) {
         // introducir el Scanner
         Scanner reader = new Scanner(System.in);
         
-        int i = 1;
         int media = 0;
         int nota;
         
         System.out.println("Se van a introducir 10 notas.");
         
-        do {
+        for ( int i = 1; i <= 10; ++i ) {
             // introducir la nota
             System.out.println("Introduce una nota ( 1 - 10 ):");
             nota = reader.nextInt();
             if ( nota >= 1 && nota <= 10 ) {
                 media += nota;
-                ++i;
             }
             else {
                 System.out.println("Nota no valida.");
             }
-        } while ( i <= 10 );
+        }
         media /= 10;
         System.out.println("La media es " + media);
     }
