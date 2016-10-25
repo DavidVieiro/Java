@@ -23,7 +23,7 @@ public class LeerNotasCorrectas1 {
         
         do {
             // introducir la nota
-            System.out.println("Introduce un numero entero:");
+            System.out.println("Introduce una nota ( 1 - 10 ):");
             nota = reader.nextInt();
             if ( nota >= 1 && nota <= 10 ) {
                 media += nota;
