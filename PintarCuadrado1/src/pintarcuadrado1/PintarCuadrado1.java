@@ -33,9 +33,9 @@ public class PintarCuadrado1 {
         if ( x < 15 && x > 0 ) {
             for ( i = 1; i <= x; ++i ) {
                 for ( n = 1; n <= x; ++n ) {
-                    System.out.printf("*");
+                    System.out.printf("*"); // printf no hace salto de linea
                 }
-                System.out.println("");
+                System.out.println(""); // se introduce aqui el println para que haga el salto de linea
             }
         }
         else {
