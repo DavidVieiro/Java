@@ -11,6 +11,7 @@ import java.util.Scanner;
  *
  * @author dam132
  */
+// Leer notas correctas y mostrar la media. Solo numeros del 1 al 10. for
 public class LeerNotasCorrectas2 {
     public static void main(String[] args) {
         // introducir el Scanner
@@ -25,6 +26,7 @@ public class LeerNotasCorrectas2 {
             // introducir la nota
             System.out.println("Introduce una nota ( 1 - 10 ):");
             nota = reader.nextInt();
+            
             if ( nota >= 1 && nota <= 10 ) {
                 media += nota;
             }
