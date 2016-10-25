@@ -17,14 +17,14 @@ public class LeerNotasCorrectas2 {
         // introducir el Scanner
         Scanner reader = new Scanner(System.in);
         
-        int media = 0;
+        float media = 0;
         int nota;
         
         System.out.println("Se van a introducir 10 notas.");
         
         for ( int i = 1; i <= 10; ++i ) {
             // introducir la nota
-            System.out.println("Introduce una nota ( 1 - 10 ):");
+            System.out.println("Introduce la " + i + "ª nota ( 1 - 10 ):");
             nota = reader.nextInt();
             
             if ( nota >= 1 && nota <= 10 ) {
