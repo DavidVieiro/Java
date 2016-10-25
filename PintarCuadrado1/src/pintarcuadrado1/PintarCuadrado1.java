@@ -15,13 +15,14 @@ import java.util.Scanner;
 public class PintarCuadrado1 {
     public static void main(String[] args) {
         // definir variables
+        int limite = 15; // tamaño maximo no permitido para dibujar el cuadrado
         int x = 0; // tamaño del cuadrado
         int i; // primer incremental
         int n; // segundo incremental
         
         // introducir el Scanner
         Scanner reader = new Scanner(System.in);
-        System.out.println("Introduce el tamaño del cuadrado a dibujar. Lado menor que 15.");
+        System.out.println("Introduce el tamaño del cuadrado a dibujar. Lado menor que " + limite + ".");
         // usamos el try{}catch(){} para evitar errores con otro tipo de dato.
         try {
             x = reader.nextInt();
@@ -30,7 +31,7 @@ public class PintarCuadrado1 {
             System.out.println("El dato introducido no es correcto. Usa numeros enteros.");
         }
         // bucle dentro de bucle para crear el cuadrado.
-        if ( x < 15 && x > 0 ) {
+        if ( x < limite && x > 0 ) {
             for ( i = 1; i <= x; ++i ) {
                 for ( n = 1; n <= x; ++n ) {
                     System.out.printf("*"); // printf no hace salto de linea
@@ -39,7 +40,7 @@ public class PintarCuadrado1 {
             }
         }
         else {
-            System.out.println("Introduce un valor correcto ( 1 - 14 )");
+            System.out.println("Introduce un valor correcto ( 1 - " + ( limite - 1) + " ).");
         }
     }
     
