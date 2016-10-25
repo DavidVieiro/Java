@@ -22,14 +22,14 @@ public class PintarCuadrado1 {
         // introducir el Scanner
         Scanner reader = new Scanner(System.in);
         System.out.println("Introduce el tamaño del cuadrado a dibujar. Lado menor que 15.");
-        // usamos el try catch() para evitar errores con otro tipo de dato.
+        // usamos el try{}catch(){} para evitar errores con otro tipo de dato.
         try {
             x = reader.nextInt();
         }
         catch ( Exception e) {
             System.out.println("El dato introducido no es correcto. Usa numeros enteros.");
         }
-        
+        // bucle dentro de bucle para crear el cuadrado.
         if ( x < 15 && x > 0 ) {
             for ( i = 1; i <= x; ++i ) {
                 for ( n = 1; n <= x; ++n ) {
