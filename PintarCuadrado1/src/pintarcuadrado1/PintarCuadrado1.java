@@ -15,14 +15,20 @@ import java.util.Scanner;
 public class PintarCuadrado1 {
     public static void main(String[] args) {
         // definir variables
-        int x; // tamaño del cuadrado
+        int x = 0; // tamaño del cuadrado
         int i; // primer incremental
         int n; // segundo incremental
         
         // introducir el Scanner
         Scanner reader = new Scanner(System.in);
         System.out.println("Introduce el tamaño del cuadrado a dibujar. Lado menor que 15.");
-        x = reader.nextInt();
+        // usamos el try catch() para evitar errores con otro tipo de dato.
+        try {
+            x = reader.nextInt();
+        }
+        catch ( Exception e) {
+            System.out.println("El dato introducido no es correcto. Usa numeros enteros.");
+        }
         
         if ( x < 15 && x > 0 ) {
             for ( i = 1; i <= x; ++i ) {
