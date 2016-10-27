@@ -21,20 +21,20 @@ public class EntradaDatos1 {
         
         InputStreamReader flujo = new InputStreamReader(System.in);
         BufferedReader teclado = new BufferedReader(flujo);
-        
+        // nombre
         System.out.println("Introduzca un nombre:");
         s = teclado.readLine();
         System.out.println("Su nombre: " + s);
-        
+        // numero entero
         System.out.println("Introduzca un número:");
         cadena = teclado.readLine();
         n = Integer.parseInt(cadena);
         System.out.println("El numero: " + n);
-        
+        // numero decimal
         System.out.println("El numero con decimales:");
         f = Float.parseFloat(teclado.readLine());
         System.out.println("El numero decimal: " + f);
-        
+        // cadenas
         nombre = "Cadenas probando";
         System.out.println(nombre + " - " + nombre.charAt(0));
         
