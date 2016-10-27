@@ -48,9 +48,11 @@ public class EntradaDatos1 {
         System.out.println("Numero: " + numero);
         
         System.out.println(".........");
+        // Integer objeto = Integer.valueOf(n);
         Integer objeto = n;
         
         // objeto
+        // int unnumero = objeto.intValue();
         int unnumero = objeto;
         System.out.println(unnumero + "..." + objeto.toString());
         
