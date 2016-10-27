@@ -6,6 +6,7 @@
 package entradadatos1;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
@@ -13,7 +14,7 @@ import java.io.InputStreamReader;
  * @author dam132
  */
 public class EntradaDatos1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String nombre, s, cadena;
         int n;
         float f;
@@ -27,6 +28,7 @@ public class EntradaDatos1 {
         System.out.println("Su nombre: " + s);
         
         System.out.println("Introduzca un número:");
+        cadena = teclado.readLine();
         n = Integer.parseInt(cadena);
         System.out.println("El numero " + n);
         
@@ -42,10 +44,10 @@ public class EntradaDatos1 {
         String b = String.valueOf(true);
         float numero = Float.parseFloat("3.99");
         System.out.println(".........");
-        Integer objeto = Integer.valueOf(n);
+        Integer objeto = n;
         
         // objeto
-        int unnumero = objeto.intValue();
+        int unnumero = objeto;
         System.out.println(unnumero + "..." + objeto.toString());
         
     }
