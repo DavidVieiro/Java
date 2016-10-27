@@ -8,19 +8,18 @@ package entradadatos1;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 /**
  *
  * @author dam132
  */
 public class EntradaDatos1 {
     public static void main(String[] args) throws IOException {
+        
         String nombre, s, cadena;
         int n;
         float f;
         
         InputStreamReader flujo = new InputStreamReader(System.in);
-        
         BufferedReader teclado = new BufferedReader(flujo);
         
         System.out.println("Introduzca un nombre:");
@@ -30,19 +29,24 @@ public class EntradaDatos1 {
         System.out.println("Introduzca un número:");
         cadena = teclado.readLine();
         n = Integer.parseInt(cadena);
-        System.out.println("El numero " + n);
+        System.out.println("El numero: " + n);
         
         System.out.println("El numero con decimales:");
         f = Float.parseFloat(teclado.readLine());
-        System.out.println("El numero " + f);
+        System.out.println("El numero decimal: " + f);
         
         nombre = "Cadenas probando";
-        System.out.println(nombre + " " + nombre.charAt(0));
+        System.out.println(nombre + " - " + nombre.charAt(0));
         
         // pruebas conversiones
         char c = Character.toUpperCase('a');
         String b = String.valueOf(true);
         float numero = Float.parseFloat("3.99");
+        
+        System.out.println("char: " + c);
+        System.out.println("String: " + b);
+        System.out.println("Numero: " + numero);
+        
         System.out.println(".........");
         Integer objeto = n;
         
