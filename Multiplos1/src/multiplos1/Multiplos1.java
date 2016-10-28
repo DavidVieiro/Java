@@ -19,7 +19,7 @@ public class Multiplos1 {
     public static void main(String[] args) throws IOException {
          
         // variables
-        int numero1, numero2, i;
+        int numero1, numero2, i, mayor, menor;
         
         // introducir StreamReader
         InputStreamReader datos = new InputStreamReader(System.in);
@@ -30,18 +30,17 @@ public class Multiplos1 {
         
         System.out.println("Introduce el numero entero donde se termina:");
         numero2 = Integer.parseInt(reader.readLine());
-        if ( numero1 < numero2 ) {
-           for ( i = numero1; i < numero2 ; ++i ) {
+        
+        mayor = Math.max(numero1, numero2);
+        menor = Math.min(numero1, numero2);
+        
+        for ( i = menor; i <= mayor ; ++i ) {
 
-                if ( i % 3 == 0 ) {
-                    System.out.println( i + " - Es multiplo de 3");
-                }
+             if ( i % 3 == 0 ) {
+                 System.out.println( i + " - Es multiplo de 3");
+             }
 
-            } 
-        }
-        else {
-            System.out.println("El numero donde se empieza tiene que ser menor que en el que se termina...");
-        }
+        } 
         
     }
     
