@@ -31,16 +31,18 @@ public class Multiplos1 {
         System.out.println("Introduce el numero entero donde se termina:");
         numero2 = Integer.parseInt(reader.readLine());
         
+        // se comprueba que los numeros introducidos son distintos
         if ( numero1 != numero2 ) {
+            // se mira cual es mayor y cual menor de los dos numeros
             mayor = Math.max(numero1, numero2);
             menor = Math.min(numero1, numero2);
-
+            // se calcula el multiplo de 3
             for ( i = menor; i <= mayor ; ++i ) {
 
-                 if ( i % 3 == 0 ) {
-                     System.out.println( i + " - Es multiplo de 3");
-                 }
-
+                if ( i % 3 == 0 ) {
+                    System.out.println( i + " - Es multiplo de 3");
+                }
+                
             }
         }
         else {
