@@ -30,13 +30,17 @@ public class Multiplos1 {
         
         System.out.println("Introduce el numero entero donde se termina:");
         numero2 = Integer.parseInt(reader.readLine());
-        
-        for ( i = numero1; i < numero2 ; ++i ) {
-            
-            if ( i % 3 == 0 ) {
-                System.out.println( i + " - Es multiplo de 3");
-            }
-            
+        if ( numero1 < numero2 ) {
+           for ( i = numero1; i < numero2 ; ++i ) {
+
+                if ( i % 3 == 0 ) {
+                    System.out.println( i + " - Es multiplo de 3");
+                }
+
+            } 
+        }
+        else {
+            System.out.println("El numero donde se empieza tiene que ser menor que en el que se termina...");
         }
         
     }
