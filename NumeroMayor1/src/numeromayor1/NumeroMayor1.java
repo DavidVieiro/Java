@@ -7,7 +7,7 @@ package numeromayor1;
 
 import java.util.Scanner;
 // Crea un algoritmo que lea 20 numeros enteros e indique cual es el mayor de los numeros introducidos
-// a) Suponemos solo positivos
+// b) Cualquier valor
 /**
  *
  * @author dam132

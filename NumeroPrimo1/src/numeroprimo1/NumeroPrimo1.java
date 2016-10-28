@@ -13,28 +13,37 @@ import java.util.Scanner;
  */
 public class NumeroPrimo1 {
     public static void main(String[] args) {
+        
+        // inicializamos la variable
+        int numero;
+        int i;
+        boolean primo = false;
+        
         // introducir el Scanner
         Scanner reader = new Scanner(System.in);
+        
         // introducir el entero
         System.out.println("Introduce un numero entero:");
-        int numero = reader.nextInt();
-        // inicializamos la variable
-        // for (ejecutado_primera_vez;condicion;incremento) { }
+        numero = reader.nextInt();
+        
         if ( numero == 1 ) {
             System.out.println("El numero no es primo");
         }
         else {
-            for ( int c = 2; numero >= 1; numero -= 1 ) {
+            // for (ejecutado_primera_vez;condicion;incremento) { }
+            for ( i = 2; i < numero; ++i ) {
                 // introducir el entero
                 System.out.println("Introduce un numero entero:");
                 numero = reader.nextInt();
-                if ( numero % c == 0 ){
-                    System.out.println("El numero " + numero + " ES primo");
+                if ( numero % i == 0 ){
+                    primo = false;
                 }
-                else {
-                    System.out.println("El numero " + numero + " NO ES primo");
-                }
-                
+            }
+            if ( primo ) {
+                System.out.println("El numero " + numero + " ES primo");
+            }
+            else {
+                System.out.println("El numero " + numero + " NO ES primo");
             }
         }
         
