@@ -28,8 +28,7 @@ public class NumeroPrimo1 {
         
         // for (ejecutado_primera_vez;condicion;incremento) { }
         for ( i = 1; i <= numero; ++i ) {
-
-            if ( numero % i == 0 ){
+            if ( numero % i == 0 && numero != 2 ){
                 ++primo;
             }
         }
