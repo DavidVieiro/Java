@@ -17,7 +17,7 @@ public class NumeroPrimo1 {
         // inicializamos la variable
         int numero;
         int i;
-        boolean primo = false;
+        int primo = 0;
         
         // introducir el Scanner
         Scanner reader = new Scanner(System.in);
@@ -26,25 +26,18 @@ public class NumeroPrimo1 {
         System.out.println("Introduce un numero entero:");
         numero = reader.nextInt();
         
-        if ( numero == 1 ) {
-            System.out.println("El numero no es primo");
+        // for (ejecutado_primera_vez;condicion;incremento) { }
+        for ( i = 1; i <= numero; ++i ) {
+
+            if ( numero % i == 0 ){
+                ++primo;
+            }
+        }
+        if ( primo == 2 ) {
+            System.out.println("El numero " + numero + " ES primo");
         }
         else {
-            // for (ejecutado_primera_vez;condicion;incremento) { }
-            for ( i = 2; i < numero; ++i ) {
-                // introducir el entero
-                System.out.println("Introduce un numero entero:");
-                numero = reader.nextInt();
-                if ( numero % i == 0 ){
-                    primo = false;
-                }
-            }
-            if ( primo ) {
-                System.out.println("El numero " + numero + " ES primo");
-            }
-            else {
-                System.out.println("El numero " + numero + " NO ES primo");
-            }
+            System.out.println("El numero " + numero + " NO ES primo");
         }
         
     }
