@@ -75,7 +75,7 @@ public class MenuOpciones1 {
                     System.out.println("Introduce un exponente para el numero anterior:");
                     numero2 = Double.parseDouble(teclado.readLine());
                     n = Math.pow(numero, numero2);
-                    System.out.println("El numero" + numero + " elevado a " + numero2 +" es: " + n + "\n");
+                    System.out.println("El numero " + numero + " elevado a " + numero2 +" es: " + n + "\n");
                     break;
                 case 6:
                     System.out.println("Introduce un numero para compararlo con el siguiente:");
@@ -91,7 +91,6 @@ public class MenuOpciones1 {
                     break;
                 default:
                     System.out.println("La opcion introducida no existe. Vuelve a intentarlo.");
-                    break;
             }
         } while ( continuar == 1 );
         
