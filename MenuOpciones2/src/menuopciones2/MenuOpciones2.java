@@ -22,27 +22,25 @@ public class MenuOpciones2 {
         InputStreamReader flujo = new InputStreamReader(System.in);
         BufferedReader teclado = new BufferedReader(flujo);
         
-        
-            do {
-                
-                System.out.println("Elige una opcion ( 1 - 7 ):");
-                System.out.println("- Pulse 1 - para hallar el valor absoluto de un numero.");
-                System.out.println("- Pulse 2 - para calcular su raiz cuadrada.");
-                System.out.println("- Pulse 3 - para devolver el numero entero.");
-                System.out.println("- Pulse 4 - para redondear hacia arriba un numero.");
-                System.out.println("- Pulse 5 - para elevar un numero a un exponente.");
-                System.out.println("- Pulse 6 - para devolver el mayor de 2 numeros.");
-                System.out.println("- Pulse 7 - para SALIR del programa.");
-                try {
-                    opcion = Integer.parseInt(teclado.readLine());
-                }
-                catch (NumberFormatException ex) {
-                    System.out.println("Valor introducido incorrecto. Usa numeros.");
-                }
-                
-            } while (opcion < 1 || opcion > 7);
-            return opcion;
+        do {
             
+            System.out.println("Elige una opcion ( 1 - 7 ):");
+            System.out.println("- Pulse 1 - para hallar el valor absoluto de un numero.");
+            System.out.println("- Pulse 2 - para calcular su raiz cuadrada.");
+            System.out.println("- Pulse 3 - para devolver el numero entero.");
+            System.out.println("- Pulse 4 - para redondear hacia arriba un numero.");
+            System.out.println("- Pulse 5 - para elevar un numero a un exponente.");
+            System.out.println("- Pulse 6 - para devolver el mayor de 2 numeros.");
+            System.out.println("- Pulse 7 - para SALIR del programa.");
+            try {
+                opcion = Integer.parseInt(teclado.readLine());
+            }
+            catch (NumberFormatException ex) {
+                System.out.println("Valor introducido incorrecto. Usa numeros.");
+            }
+        } while (opcion < 1 || opcion > 7);
+        return opcion;
+        
     }
     public static void main(String[] args) throws IOException {
         
@@ -99,7 +97,6 @@ public class MenuOpciones2 {
                         break;
                     case 7:
                         continuar = 0;
-                        System.out.println("Se ha salido del programa.");
                         break;
                     default:
                         System.out.println("La opcion introducida no existe. Vuelve a intentarlo.");
@@ -108,7 +105,7 @@ public class MenuOpciones2 {
         } catch (NumberFormatException ex) {
             System.out.println("Valor introducido incorrecto. Usa numeros.");
         }
-
+        System.out.println("Se ha salido del programa.");
     }
     
 }
