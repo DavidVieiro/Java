@@ -15,9 +15,26 @@ import java.io.InputStreamReader;
  * @author dam132
  */
 public class FactorialNumero1 {
-    static int factorialNumero (int numero) throws IOException {
+    static int factorialNumero (int numero)  {
         // definimos las variables
         int c, factorial = 1;
+        
+        // realizamos las operaciones
+        if ( numero > 0 ) {
+            for ( c = 1; c <= numero; c++ ) {
+                factorial *= c;
+            }
+            System.out.println("El factorial del numero " + numero + " es: " + factorial);
+        }
+        else {
+            System.out.println("Introduce un numero positivo.");
+        }
+        return factorial;
+    }
+    public static void main(String[] args) throws IOException {
+        
+        int numero = 0;
+        
         // introducir numero factorial
         InputStreamReader flujo = new InputStreamReader(System.in);
         BufferedReader teclado = new BufferedReader(flujo);
@@ -29,21 +46,9 @@ public class FactorialNumero1 {
         catch (NumberFormatException ex) {
             System.out.println("Valor introducido incorrecto. Usa numeros.");
         }
-        // realizamos las operaciones
-        if ( numero > 0 ) {
-            for ( c = 1; c <= numero; c++ ) {
-                factorial *= c;
-            }
-        }
-        return factorial;
-    }
-    public static void main(String[] args) throws IOException {
+        numero = factorialNumero(numero);
         
-        int factorial = 1;
         
-        factorial = factorialNumero(factorial);
-        
-        System.out.println("El factorial del numero introducido es: " + factorial);
         
     }
     
