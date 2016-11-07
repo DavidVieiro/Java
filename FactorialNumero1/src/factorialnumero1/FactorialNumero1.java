@@ -15,9 +15,10 @@ import java.io.InputStreamReader;
  * @author dam132
  */
 public class FactorialNumero1 {
-    static int factorialNumero (int numero)  {
+    static float factorialNumero (float numero)  {
         // definimos las variables
-        int c, factorial = 1;
+        int c;
+        float factorial = 1;
         
         // realizamos las operaciones
         if ( numero > 0 ) {
@@ -33,7 +34,7 @@ public class FactorialNumero1 {
     }
     public static void main(String[] args) throws IOException {
         
-        int numero = 0;
+        float numero = 0;
         
         // introducir numero factorial
         InputStreamReader flujo = new InputStreamReader(System.in);
