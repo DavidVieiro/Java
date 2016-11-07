@@ -42,9 +42,7 @@ public class MenuOpciones2 {
                 
             } while (opcion < 1 || opcion > 7);
             return opcion;
-        
-        
-        
+            
     }
     public static void main(String[] args) throws IOException {
         
@@ -55,9 +53,8 @@ public class MenuOpciones2 {
             InputStreamReader flujo = new InputStreamReader(System.in);
             BufferedReader teclado = new BufferedReader(flujo);
             
-            menu = menuCalculos();
-            
             do {
+                menu = menuCalculos();
                 
                 switch (menu) {
                     case 1:
