@@ -17,12 +17,12 @@ import java.io.InputStreamReader;
  * @author dam132
  */
 public class PintarCuadrado2 {
-    static int pintarCuadrado () throws IOException {
+    static int pintarCuadrado (int area) throws IOException {
         int limite = 15; // tamaño maximo no permitido para dibujar el cuadrado
         int x = 0; // lado del cuadrado
         int i; // primer incremental
         int n; // segundo incremental
-        int area; // area del cuadrado
+        
         // introducir el InputStreamReader - BufferReader
         InputStreamReader flujo = new InputStreamReader(System.in);
         BufferedReader teclado = new BufferedReader(flujo);
@@ -54,8 +54,9 @@ public class PintarCuadrado2 {
     public static void main(String[] args) throws IOException {
         // variables
         int lado;
+        int area = 0;
         // llamada al metodo / funcion
-        lado = pintarCuadrado();
+        lado = pintarCuadrado(area);
         // mensaje de salido
         System.out.println("El area del cuadrado es: " + lado);
     }
