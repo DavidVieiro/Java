@@ -17,18 +17,13 @@ import java.io.InputStreamReader;
  * @author dam132
  */
 public class PintarCuadrado2 {
-    static int pintarCuadrado () {
-        
-        return 0;
-    }
-    public static void main(String[] args) throws IOException {
-        // definir variables
+    static int pintarCuadrado () throws IOException {
         int limite = 15; // tamaño maximo no permitido para dibujar el cuadrado
-        int x = 0; // tamaño del cuadrado
+        int x = 0; // lado del cuadrado
         int i; // primer incremental
         int n; // segundo incremental
-        
-        // introducir el Scanner
+        int area; // area del cuadrado
+        // introducir el InputStreamReader - BufferReader
         InputStreamReader flujo = new InputStreamReader(System.in);
         BufferedReader teclado = new BufferedReader(flujo);
         System.out.println("Introduce el tamaño del cuadrado a dibujar. Lado menor que " + limite + ".");
@@ -36,11 +31,11 @@ public class PintarCuadrado2 {
         try {
             x = Integer.parseInt(teclado.readLine());
         }
-        catch ( NumberFormatException e) {
+        catch ( NumberFormatException e ) {
             System.out.println("El dato introducido no es correcto. Usa numeros enteros.");
         }
         // bucle dentro de bucle para crear el cuadrado.
-        if ( x <= limite && x > 0 ) {
+        if ( x < limite && x > 0 ) {
             for ( i = 1; i <= x; ++i ) {
                 for ( n = 1; n <= x; ++n ) {
                     System.out.print("*"); // print no hace salto de linea
@@ -51,6 +46,18 @@ public class PintarCuadrado2 {
         else {
             System.out.println("Introduce un valor correcto ( 1 - " + limite + " ).");
         }
+        // calculo del area del cuadrado
+        area = x*x;
+        return area;
+    }
+    
+    public static void main(String[] args) throws IOException {
+        // variables
+        int lado;
+        // llamada al metodo / funcion
+        lado = pintarCuadrado();
+        // mensaje de salido
+        System.out.println("El area del cuadrado es: " + lado);
     }
     
 }
