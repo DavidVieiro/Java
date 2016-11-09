@@ -37,33 +37,35 @@ public class FactorialCalculo1 {
     
     public static void main(String[] args) throws IOException {
         
-        float resultado, factorial_q, factorial_p, fact3;
+        float resultado, factorial_q, factorial_p, fact3, factorial_final;
         int numero_q, numero_p;
         
         // introducir numero factorial
         InputStreamReader flujo = new InputStreamReader(System.in);
         BufferedReader teclado = new BufferedReader(flujo);
-        
+        System.out.println("El valor de Q tiene que ser mayor que el de P...");
         System.out.println("Introduce el valor de Q:");
         numero_q = Integer.parseInt(teclado.readLine());
         factorial_q = factorialNumero(numero_q);
-        System.out.println("FACTORIAL Q = " + factorial_q);
+        //System.out.println("FACTORIAL Q = " + factorial_q);
                 
         System.out.println("Introduce el valor de P:");
         numero_p = Integer.parseInt(teclado.readLine());
         factorial_p = factorialNumero(numero_p);
-        System.out.println("FACTORIAL P = " + factorial_p);
+        //System.out.println("FACTORIAL P = " + factorial_p);
         
         fact3 = numero_q - numero_p;
-        
-        if ( numero_p > 0 && numero_q >= 0 && numero_p >= numero_q ) {
+        factorial_final = factorialNumero( fact3 );
+        //System.out.println("Fact3 = " + fact3);
+        //System.out.println("FactFinal -> " + factorial_final);
+        if ( numero_p > 0 && numero_q >= 0 && numero_q >= numero_p ) {
             if ( numero_p == 0 || numero_p == numero_q ) {
                 resultado = 1;
             }
             else {
-                resultado = factorial_q / ( factorialNumero( fact3 ) * factorial_p );
-                System.out.println("El resultado es: " + resultado);
+                resultado = factorial_q / ( factorial_final * factorial_p );
             }
+            System.out.println("El resultado es: " + resultado);
         }
         
     }
