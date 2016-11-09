@@ -67,6 +67,10 @@ public class FactorialCalculo1 {
             }
             System.out.println("El resultado es: " + resultado);
         }
+        else {
+            System.out.println("RECUERDA: El valor de Q tiene que ser mayor que el de P...");
+        }
+            
         
     }
     
