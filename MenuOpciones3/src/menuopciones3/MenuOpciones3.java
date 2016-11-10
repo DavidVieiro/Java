@@ -48,7 +48,7 @@ public class MenuOpciones3 {
             catch (NumberFormatException ex) {
                 System.out.println("Valor introducido incorrecto. Usa numeros.");
             }
-        } while (opcion < 1 || opcion > 7);
+        } while (opcion < 1 || opcion > 4);
         return opcion;
         
     }

@@ -41,7 +41,7 @@ public class MenuConversiones1 {
 
             opcion = Byte.parseByte(teclado.readLine());
 
-        } while (opcion < 1 || opcion > 7);
+        } while (opcion < 1 || opcion > 4);
         return opcion;
     }
     
