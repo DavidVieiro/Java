@@ -30,8 +30,8 @@ import java.util.logging.Logger;
  */
 public class MenuOpciones3 {
     
-    static int menuOpciones() throws IOException {
-        int opcion = 0;
+    static byte menuOpciones() throws IOException {
+        byte opcion = 0;
         
         InputStreamReader flujo = new InputStreamReader(System.in);
         BufferedReader teclado = new BufferedReader(flujo);
@@ -45,7 +45,7 @@ public class MenuOpciones3 {
             System.out.println("- Pulse 4 - para SALIR del programa.");
 
             try {
-                opcion = Integer.parseInt(teclado.readLine());
+                opcion = Byte.parseByte(teclado.readLine());
             }
             catch (NumberFormatException ex) {
                 System.out.println("Valor introducido incorrecto. Usa numeros.");
@@ -56,7 +56,7 @@ public class MenuOpciones3 {
     }
     
     static double calculos () throws IOException  {
-        int menu, continuar = 1;
+        byte menu, continuar = 1;
         double numero, numero2, n = 0;
 
         InputStreamReader flujo = new InputStreamReader(System.in);
