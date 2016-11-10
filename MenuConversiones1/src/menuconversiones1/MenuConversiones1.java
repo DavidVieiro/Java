@@ -46,7 +46,7 @@ public class MenuConversiones1 {
     }
     
     static double pulgadasCentimetros ( double centimetros ) {
-        centimetros *= 2.5;
+        centimetros *= 2.54;
         return centimetros;
     }
     
