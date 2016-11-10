@@ -8,6 +8,8 @@ package menuopciones3;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Menú : Cálculos
@@ -19,7 +21,7 @@ import java.io.InputStreamReader;
  *      Los apartados anteriores.
  *      Leer los datos y mostrar el resultado del calculos.
  *      Leer los datos y devuelve el resultado.
- * d)
+ * d) Implementar el tercer método de manera que pasamos datos, argumentos y devuelve el resultado.
  */
 
 /**
@@ -53,7 +55,7 @@ public class MenuOpciones3 {
         
     }
     
-    static double calculos () throws IOException {
+    static double calculos () throws IOException  {
         int menu, continuar = 1;
         double numero, numero2, n = 0;
 
@@ -61,31 +63,36 @@ public class MenuOpciones3 {
         BufferedReader teclado = new BufferedReader(flujo);
 
         do {
-            menu = menuOpciones();
-
-            switch (menu) {
-                case 1:
-                    System.out.println("Introduce un numero para devolver su valor absoluto:");
-                    numero = Double.parseDouble(teclado.readLine());
-                    n = Math.abs(numero);
-                    break;
-                case 2:
-                    System.out.println("Introduce un numero:");
-                    numero = Double.parseDouble(teclado.readLine());
-                    System.out.println("Introduce un numero");
-                    numero2 = Double.parseDouble(teclado.readLine());
-                    n = Math.pow(numero, numero2);
-                    break;
-                case 3:
-                    System.out.println("Introduce un numero para devolver su raiz cuadrada:");
-                    numero = Double.parseDouble(teclado.readLine());
-                    n = Math.sqrt(numero);
-                    break;
-                case 4:
-                    continuar = 0;
-                    break;
-                default:
-                    System.out.println("La opcion introducida no existe. Vuelve a intentarlo.");
+            try {
+                menu = menuOpciones();
+                
+                switch (menu) {
+                    case 1:
+                        System.out.println("Introduce un numero para devolver su valor absoluto:");
+                        numero = Double.parseDouble(teclado.readLine());
+                        n = Math.abs(numero);
+                        break;
+                    case 2:
+                        System.out.println("Introduce un numero:");
+                        numero = Double.parseDouble(teclado.readLine());
+                        System.out.println("Introduce un numero");
+                        numero2 = Double.parseDouble(teclado.readLine());
+                        n = Math.pow(numero, numero2);
+                        break;
+                    case 3:
+                        System.out.println("Introduce un numero para devolver su raiz cuadrada:");
+                        numero = Double.parseDouble(teclado.readLine());
+                        n = Math.sqrt(numero);
+                        break;
+                    case 4:
+                        continuar = 0;
+                        break;
+                    default:
+                        System.out.println("La opcion introducida no existe. Vuelve a intentarlo.");
+                }
+                
+            } catch (NumberFormatException ex) {
+                System.out.println("Valor introducido incorrecto. Usa numeros.");
             }
             return n;
         } while ( continuar == 1 );
