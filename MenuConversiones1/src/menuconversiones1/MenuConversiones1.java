@@ -33,10 +33,10 @@ public class MenuConversiones1 {
         
         do {
             
-            System.out.println("Elige una opcion ( 1 - 7 ):");
-            System.out.println("- Pulse 1 - Covertir de Pulgadas a Centimetros.");
-            System.out.println("- Pulse 2 - Convertir de Pies a Metros.");
-            System.out.println("- Pulse 3 - Convertir de Millas/hora a Km/hora.");
+            System.out.println("Elige una opcion ( 1 - 4 ):");
+            System.out.println("- Pulse 1 - Covertir entre Pulgadas y Centimetros.");
+            System.out.println("- Pulse 2 - Convertir entre Pies y Metros.");
+            System.out.println("- Pulse 3 - Convertir entre Millas/hora y Km/hora.");
             System.out.println("- Pulse 4 - para SALIR del programa.");
 
             opcion = Byte.parseByte(teclado.readLine());
@@ -45,9 +45,30 @@ public class MenuConversiones1 {
         return opcion;
     }
     
+    static byte subMenuOpciones() throws IOException { 
+        byte opcion2;
+        
+        do {
+            
+            System.out.println("¿En que direccion quieres realizar la conversion?");
+            System.out.println("- Pulse 1 - Direccion normal ( Ej - Pulgadas -> Centimetros ) :");
+            System.out.println("- Pulse 2 - Direccion inversa ( Ej - Centimetros -> Pulgadas ):");
+            
+            opcion2 = Byte.parseByte(teclado.readLine());
+
+        } while (opcion2 < 1 || opcion2 > 2);
+        
+        return opcion2;
+    }
+    
     static double pulgadasCentimetros ( double centimetros ) {
         centimetros *= 2.54;
         return centimetros;
+    }
+    
+    static double centimetrosPulgadas ( double pulgadas ) {
+        pulgadas *= 0.393701;
+        return pulgadas;
     }
     
     static double piesMetros ( double metros ) {
@@ -55,33 +76,68 @@ public class MenuConversiones1 {
         return metros;
     }
     
+    static double metrosPies ( double pies) {
+        pies *= 3.280841666667;
+        return pies;
+    }
+    
     static double millasHoraKilometrosHora ( double kilometrosHora) {
         kilometrosHora *= 1.60934;
         return kilometrosHora;
     }
     
-    static double calculos () throws IOException  {
-        byte menu;
+    static double kilometrosHoraMillasHora ( double millasHora ) {
+        millasHora *= 0.621371;
+        return millasHora;
+    }
+        
+    public static void main(String[] args) throws IOException {
+        // definimos la variable y la inicializamos
+        byte menu, subMenu = 0;
         double numero, n = 0;
 
         do {
+            // llamamos al metodo / funcion
             menu = menuOpciones();
-
+            if ( menu != 4 ) {
+                subMenu = subMenuOpciones(); 
+            }
             switch (menu) {
                 case 1:
-                    System.out.println("Introduce una distancia en Pulgadas para convertirlo a Centimetros:");
-                    numero = Double.parseDouble(teclado.readLine());
-                    n = pulgadasCentimetros(numero);
+                    if ( subMenu == 1 ) {
+                        System.out.println("Introduce una distancia en Pulgadas para convertirlo a Centimetros:");
+                        numero = Double.parseDouble(teclado.readLine());
+                        n = pulgadasCentimetros(numero);
+                    }
+                    else {
+                        System.out.println("Introduce una distancia en Centimetros para convertirlo a Pulgadas:");
+                        numero = Double.parseDouble(teclado.readLine());
+                        n = centimetrosPulgadas(numero);
+                    }
                     break;
                 case 2:
-                    System.out.println("Introduce una distancia en Pies para convertirlo a Metros:");
-                    numero = Double.parseDouble(teclado.readLine());
-                    n = piesMetros(numero);
+                    if ( subMenu == 1 ) {
+                        System.out.println("Introduce una distancia en Pies para convertirlo a Metros:");
+                        numero = Double.parseDouble(teclado.readLine());
+                        n = piesMetros(numero);
+                    }
+                    else {
+                        System.out.println("Introduce una distancia en Metros para convertirlo a Pies:");
+                        numero = Double.parseDouble(teclado.readLine());
+                        n = metrosPies(numero);
+                    }
                     break;
                 case 3:
-                    System.out.println("Introduce una velodidad en Millas/h para convertirlo a Km/hora:");
-                    numero = Double.parseDouble(teclado.readLine());
-                    n = millasHoraKilometrosHora(numero);
+                    if ( subMenu == 1 ) {
+                        System.out.println("Introduce una velodidad en Millas/h para convertirlo a Km/hora:");
+                        numero = Double.parseDouble(teclado.readLine());
+                        n = millasHoraKilometrosHora(numero);
+                    }
+                    else {
+                        System.out.println("Introduce una velodidad en Km/hora para convertirlo a Millas/h:");
+                        numero = Double.parseDouble(teclado.readLine());
+                        n = kilometrosHoraMillasHora(numero);
+                    }
                     break;
                 case 4:
                     System.out.println("Saliendo del programa...");
@@ -89,22 +145,8 @@ public class MenuConversiones1 {
                 default:
                     System.out.println("La opcion introducida no existe. Vuelve a intentarlo.");
             }
-            return n;
+            System.out.println("\nResultado de la conversion = " + n + "\n");
         } while ( menu != 4 );
-        
-    }
-    
-    public static void main(String[] args) throws IOException {
-        // definimos la variable y la inicializamos
-        double resultado;
-        // llamamos al metodo / funcion
-        do {
-            resultado = calculos();
-            // devolvemos un mensaje
-            if ( resultado != 0 ) {
-                System.out.println("\nResultado de la conversion = " + resultado + "\n");
-            }
-        } while ( resultado != 0 );
         
     }
     
