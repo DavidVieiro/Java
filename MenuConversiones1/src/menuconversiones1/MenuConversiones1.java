@@ -10,9 +10,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Crear una aplicación que muestre el menú de opciones
- * siguiente y permita hacer el proceso de conversiones:
- * 
+ * Crear una aplicación que muestre el menú de opciones siguiente
+ * y permita hacer el proceso de conversiones en ambas direcciones:
+ *
  * Menú de conversiones:
  * 
  * Pulgadas --- centímetros (1p son 2,5cm)
