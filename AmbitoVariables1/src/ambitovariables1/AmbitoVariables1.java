@@ -15,6 +15,7 @@ public class AmbitoVariables1 {
     
     static void metodoPrueba() {
         byte numero = 88;
+        System.out.println("5 - var1(global) = " + var1);
     }
     
     public static void main(String[] args) {
