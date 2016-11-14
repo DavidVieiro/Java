@@ -18,6 +18,8 @@ public class AmbitoVariables1 {
     }
     
     public static void main(String[] args) {
+        System.out.println("1 - var1(global) = " +var1);
+        
         // variable local
         int var1 = 100;
         
