@@ -10,54 +10,93 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- *
  * @author dam132
  */
 public class AdivinarNumero1 {
-    // definimos las variables globales
+    // Definimos las variables globales
     static BufferedReader teclado = new BufferedReader( new InputStreamReader( System.in ) );
-    // ponemos el numero de intentos en una constante
-    static final int intentos = 5;
+    // Ponemos el numero de intentos en una constante
+    static final int INTENTOS = 5;
     
-    // creamos un modulo para que el jugador 1 introduzca el numero
+    // Creamos un modulo para que el jugador 1 introduzca el numero
     static int introducirNumero () throws IOException {
+        // Definimos las variables minimo y maximo para establecer el limite de valores
+        int numero = 0, minimo = 1, maximo = 100;
         
-        int numero = 0;
-        
-        // creamos un bucle para comprobar que el valor introducido es correcto
+        // Creamos un bucle para comprobar que el valor introducido es correcto
         do {
-            System.out.println("Jugador 1 - Introduce un numero enter 1 y 100:");
-            // usamos el TRY CATCH para evitar errores si se introducen otro dato que no sea numero
+            System.out.println("--- Jugador 1 ---\n");
+            System.out.println("Introduce un numero entre 1 y 100:");
+            // Usamos el TRY CATCH para evitar errores si se introducen otro dato que no sea numero
             try {
                 numero = Integer.parseInt(teclado.readLine());
             }
             catch (NumberFormatException ex) {
+                // Si introduce algo que no sea un numero le mostrara este mensaje
                 System.out.println("Introduce numeros del 1 al 100.");
             }
-            if ( numero < 1 || numero > 100) {
+            // Mantenemos el valor del numero introducido entre los parametros que queremos
+            if ( numero < minimo || numero > maximo) {
                 System.out.println("El numero introducido es incorrecto, vuelve a intentarlo...\n");
             }
-        } while ( numero < 1 || numero > 100 );
+        } while ( numero < minimo || numero > maximo );
         
         return numero;
     }
-    
+    // Creamos un modulo para que el jugador 2 introduzca datos
     static int adivinarNumero() throws IOException {
-        int adivina;
+        // inicializamos la variable
+        int adivina = 0;
         
-        adivina = Integer.parseInt(teclado.readLine());
-        
+        // Usamos el TRY CATCH para evitar errores si se introducen otro dato que no sea numero
+        try {
+            adivina = Integer.parseInt(teclado.readLine());
+        }
+        catch (NumberFormatException ex) {
+            System.out.println("Introduce numeros del 1 al 100.");
+        }
         return adivina;
     }
     
     public static void main(String[] args) throws IOException {
         // Jugador 1 Introduce un numero entre el 1 y el 100
-        int numero = introducirNumero();
+        int numero, i = 1, adivinando, res, mayor, menor;
+        boolean exit = false;
+        numero = introducirNumero();
         
-        System.out.println("El numero es --> " + numero );
         // Jugador 2 trata de adivinar el numero con 5 intentos
-        
-        
+        System.out.println("\n--- Jugador 2 ----\n");
+        System.out.println("Intenta adivinar el numero introducido por el Jugador 1:");
+        do {
+            System.out.println("\nLlevas " + i + " intento/s de " + INTENTOS);
+            adivinando = adivinarNumero();
+            
+            if ( adivinando == numero ) {
+                System.out.println("\nENHORABUENA HAS ACERTADO EL NUMERO!!!");
+                exit = true;
+            }
+            else {
+                mayor = Math.max(adivinando, numero);
+                menor = Math.min(adivinando, numero);
+                res = mayor - menor;
+                System.out.println("RES = " + res);
+                if ( res <= 10 ) {
+                    System.out.println("Estas muy cerca de acertar el numero...");
+                }
+                else if ( res <= 20 ) {
+                    System.out.println("Estas cerca de acertar el numero...");
+                }
+                else {
+                    System.out.println("Estas lejos de acertar el numero...");
+                }
+                
+            }
+            ++i;
+            
+        } while ( i <= INTENTOS && !exit );
+        if ( !exit) {
+            System.out.println("\nNo has acertado el numero, vuelve a jugar!");
+        }
         
     }
     
