@@ -79,7 +79,7 @@ public class AdivinarNumero1 {
                 mayor = Math.max(adivinando, numero);
                 menor = Math.min(adivinando, numero);
                 res = mayor - menor;
-                System.out.println("RES = " + res);
+                
                 if ( res <= 10 ) {
                     System.out.println("Estas muy cerca de acertar el numero...");
                 }
