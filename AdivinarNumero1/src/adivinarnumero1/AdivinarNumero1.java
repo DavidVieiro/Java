@@ -60,7 +60,7 @@ public class AdivinarNumero1 {
     
     public static void main(String[] args) throws IOException {
         // Jugador 1 Introduce un numero entre el 1 y el 100
-        int numero, i = 1, adivinando, res, mayor, menor;
+        int numero, i = 1, adivinando, comparacion, mayor, menor;
         boolean exit = false;
         numero = introducirNumero();
         
@@ -78,12 +78,12 @@ public class AdivinarNumero1 {
             else {
                 mayor = Math.max(adivinando, numero);
                 menor = Math.min(adivinando, numero);
-                res = mayor - menor;
+                comparacion = mayor - menor;
                 
-                if ( res <= 10 ) {
+                if ( comparacion <= 10 ) {
                     System.out.println("Estas muy cerca de acertar el numero...");
                 }
-                else if ( res <= 20 ) {
+                else if ( comparacion <= 20 ) {
                     System.out.println("Estas cerca de acertar el numero...");
                 }
                 else {
