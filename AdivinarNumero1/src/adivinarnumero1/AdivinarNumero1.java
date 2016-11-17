@@ -131,7 +131,7 @@ public class AdivinarNumero1 {
         System.out.println("entre 1 y 100 y el Jugador 2 tiene que adivinarlo.");
         System.out.println("El jugador 2 tiene 5 intentos para adivinar el numero.");
         System.out.println("Se le indicara al Jugador 2 si esta muy cerca de acertar el numero.");
-        System.out.println("Te gustaria jugar al juego ahora? ( Si / No )");
+        System.out.println("\nTe gustaria jugar al juego ahora? ( Si / No )");
         
         // Usamos el TRY CATCH para evitar errores si se introducen otro dato que no sea el que queremos
         

@@ -76,10 +76,10 @@ public class AdivinarNumero2 {
         return distancia;
     }
     
-    public static void main(String[] args) throws IOException {
+    static int elJuego() throws IOException {
         
         // La maquina crea un numero aleatorio entre el 1 y el 100
-        int numero, i = 1, adivinando;
+        int juego = 0, numero, i = 1, adivinando;
         String distancia;
         boolean exit = false;
         numero = crearNumero();
@@ -104,6 +104,33 @@ public class AdivinarNumero2 {
         } while ( i <= INTENTOS && !exit );
         if ( !exit) {
             System.out.println("\nNo has acertado el numero, vuelve a jugar!");
+        }
+        
+        return juego;
+    }
+    
+    public static void main(String[] args) throws IOException {
+        
+        String opcion;
+        char elegir;
+        
+        System.out.println("--- Este juego es para 1 Jugador ---");
+        System.out.println("La finalidad del juego es que el ordenador genera un numero aleatorio");
+        System.out.println("entre 1 y 100 y el Jugador tiene que adivinarlo.");
+        System.out.println("El Jugador tiene 5 intentos para adivinar el numero.");
+        System.out.println("Se le indicara al Jugador si esta muy cerca de acertar el numero.");
+        System.out.println("\nTe gustaria jugar al juego ahora? ( Si / No )");
+        
+        // Usamos el TRY CATCH para evitar errores si se introducen otro dato que no sea el que queremos
+        
+            opcion = String.valueOf(teclado.readLine());
+            elegir = opcion.charAt(0);
+        
+        if (elegir == 's') {
+            elJuego();
+        }
+        else {
+            System.out.println("Se ha salido del juego. Vuelve mas tarde :)");
         }
     }
     
