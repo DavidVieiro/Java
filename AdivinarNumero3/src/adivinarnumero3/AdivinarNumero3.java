@@ -19,6 +19,10 @@ public class AdivinarNumero3 {
 
     // Definimos las variables globales
     static BufferedReader teclado = new BufferedReader( new InputStreamReader( System.in ) );
+    // Definimos la distacia en constantes
+    static final int MUY_CERCA = 10;
+    static final int CERCA = 20;
+    static final int LEJOS = 30;
     
     // Creamos un modulo para que el jugador establezca el numero de intentos
     static int numIntentos() throws IOException {
@@ -38,6 +42,7 @@ public class AdivinarNumero3 {
     
     // Creamos un modulo para que la maquina cree un numero aleatorio
     static int crearNumero () throws IOException {
+        // Definimos e iniciamos las variables
         int numero, inicio = 0, fin = 0;
         
         System.out.println("Ahora tienes que introducir el rango para crear el numero aleatorio...");
@@ -78,6 +83,7 @@ public class AdivinarNumero3 {
         return adivina;
     }
     
+    // Creamos un modulos para comprobar la distancia entre los dos numeros
     static String distanciaNumeros(int adivinando, int numero){
         String distancia;
         int mayor, menor, comparacion;
@@ -86,14 +92,17 @@ public class AdivinarNumero3 {
         menor = Math.min(adivinando, numero);
         comparacion = mayor - menor;
 
-        if ( comparacion <= 10 ) {
+        if ( comparacion <= MUY_CERCA ) {
             distancia = "Estas muy cerca de acertar el numero...";
         }
-        else if ( comparacion <= 20 ) {
+        else if ( comparacion <= CERCA ) {
             distancia = "Estas cerca de acertar el numero...";
         }
-        else {
+        else if ( comparacion <= LEJOS ) {
             distancia = "Estas lejos de acertar el numero...";
+        }
+        else {
+            distancia = "Estas demasiado lejos";
         }
         
         return distancia;

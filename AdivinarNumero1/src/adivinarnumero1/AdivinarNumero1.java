@@ -17,6 +17,10 @@ public class AdivinarNumero1 {
     static BufferedReader teclado = new BufferedReader( new InputStreamReader( System.in ) );
     // Ponemos el numero de intentos en una constante
     static final int INTENTOS = 5;
+    // Definimos la distacia en constantes
+    static final int MUY_CERCA = 10;
+    static final int CERCA = 20;
+    static final int LEJOS = 30;
     
     // Creamos un modulo para que el jugador 1 introduzca el numero
     static int introducirNumero () throws IOException {
@@ -58,6 +62,7 @@ public class AdivinarNumero1 {
         return adivina;
     }
     
+    // Creamos un modulos para comprobar la distancia entre los dos numeros
     static String distanciaNumeros(int adivinando, int numero){
         String distancia;
         int mayor, menor, comparacion;
@@ -66,27 +71,32 @@ public class AdivinarNumero1 {
         menor = Math.min(adivinando, numero);
         comparacion = mayor - menor;
 
-        if ( comparacion <= 10 ) {
+        if ( comparacion <= MUY_CERCA ) {
             distancia = "Estas muy cerca de acertar el numero...";
         }
-        else if ( comparacion <= 20 ) {
+        else if ( comparacion <= CERCA ) {
             distancia = "Estas cerca de acertar el numero...";
         }
-        else {
+        else if ( comparacion <= LEJOS ) {
             distancia = "Estas lejos de acertar el numero...";
+        }
+        else {
+            distancia = "Estas demasiado lejos";
         }
         
         return distancia;
     }
     
-    public static void main(String[] args) throws IOException {
+    static int elJuego() throws IOException {
+       
         // Jugador 1 Introduce un numero entre el 1 y el 100
-        int numero, i = 1, adivinando;
+        int juego = 0, numero, i = 1, adivinando;
         String distancia;
         boolean exit = false;
         numero = introducirNumero();
         
         // Jugador 2 trata de adivinar el numero con 5 intentos
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println("\n--- Jugador 2 ----\n");
         System.out.println("Intenta adivinar el numero introducido por el Jugador 1:");
         do {
@@ -100,13 +110,39 @@ public class AdivinarNumero1 {
             else {
                 distancia = distanciaNumeros(adivinando,numero);
                 System.out.println(distancia);
-                
             }
             ++i;
             
         } while ( i <= INTENTOS && !exit );
         if ( !exit) {
             System.out.println("\nNo has acertado el numero, vuelve a jugar!");
+            System.out.println("El numero para acertar era --> " + numero);
+        }
+        
+        return juego;
+    }
+    
+    public static void main(String[] args) throws IOException {
+        String opcion;
+        char elegir;
+        
+        System.out.println("--- Este juego es para 2 Jugadores ---");
+        System.out.println("La finalidad del juego es que el Jugador 1 introduzca un numero");
+        System.out.println("entre 1 y 100 y el Jugador 2 tiene que adivinarlo.");
+        System.out.println("El jugador 2 tiene 5 intentos para adivinar el numero.");
+        System.out.println("Se le indicara al Jugador 2 si esta muy cerca de acertar el numero.");
+        System.out.println("Te gustaria jugar al juego ahora? ( Si / No )");
+        
+        // Usamos el TRY CATCH para evitar errores si se introducen otro dato que no sea el que queremos
+        
+            opcion = String.valueOf(teclado.readLine());
+            elegir = opcion.charAt(0);
+        
+        if (elegir == 's') {
+            elJuego();
+        }
+        else {
+            System.out.println("Se ha salido del juego. Vuelve mas tarde :)");
         }
         
     }

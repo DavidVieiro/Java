@@ -21,7 +21,10 @@ public class AdivinarNumero2 {
     static BufferedReader teclado = new BufferedReader( new InputStreamReader( System.in ) );
     // Ponemos el numero de intentos en una constante
     static final int INTENTOS = 5;
-    
+    // Definimos la distacia en constantes
+    static final int MUY_CERCA = 10;
+    static final int CERCA = 20;
+    static final int LEJOS = 30;
     
     // Creamos un modulo para que la maquina cree un numero aleatorio
     static int crearNumero () {
@@ -48,6 +51,7 @@ public class AdivinarNumero2 {
         return adivina;
     }
     
+    // Creamos un modulos para comprobar la distancia entre los dos numeros
     static String distanciaNumeros(int adivinando, int numero){
         String distancia;
         int mayor, menor, comparacion;
@@ -56,14 +60,17 @@ public class AdivinarNumero2 {
         menor = Math.min(adivinando, numero);
         comparacion = mayor - menor;
 
-        if ( comparacion <= 10 ) {
+        if ( comparacion <= MUY_CERCA ) {
             distancia = "Estas muy cerca de acertar el numero...";
         }
-        else if ( comparacion <= 20 ) {
+        else if ( comparacion <= CERCA ) {
             distancia = "Estas cerca de acertar el numero...";
         }
-        else {
+        else if ( comparacion <= LEJOS ) {
             distancia = "Estas lejos de acertar el numero...";
+        }
+        else {
+            distancia = "Estas demasiado lejos";
         }
         
         return distancia;
@@ -91,7 +98,6 @@ public class AdivinarNumero2 {
             else {
                 distancia = distanciaNumeros(adivinando,numero);
                 System.out.println(distancia);
-                
             }
             ++i;
             
