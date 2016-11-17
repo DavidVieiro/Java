@@ -58,9 +58,31 @@ public class AdivinarNumero1 {
         return adivina;
     }
     
+    static String distanciaNumeros(int adivinando, int numero){
+        String distancia;
+        int mayor, menor, comparacion;
+        
+        mayor = Math.max(adivinando, numero);
+        menor = Math.min(adivinando, numero);
+        comparacion = mayor - menor;
+
+        if ( comparacion <= 10 ) {
+            distancia = "Estas muy cerca de acertar el numero...";
+        }
+        else if ( comparacion <= 20 ) {
+            distancia = "Estas cerca de acertar el numero...";
+        }
+        else {
+            distancia = "Estas lejos de acertar el numero...";
+        }
+        
+        return distancia;
+    }
+    
     public static void main(String[] args) throws IOException {
         // Jugador 1 Introduce un numero entre el 1 y el 100
-        int numero, i = 1, adivinando, comparacion, mayor, menor;
+        int numero, i = 1, adivinando;
+        String distancia;
         boolean exit = false;
         numero = introducirNumero();
         
@@ -76,19 +98,8 @@ public class AdivinarNumero1 {
                 exit = true;
             }
             else {
-                mayor = Math.max(adivinando, numero);
-                menor = Math.min(adivinando, numero);
-                comparacion = mayor - menor;
-                
-                if ( comparacion <= 10 ) {
-                    System.out.println("Estas muy cerca de acertar el numero...");
-                }
-                else if ( comparacion <= 20 ) {
-                    System.out.println("Estas cerca de acertar el numero...");
-                }
-                else {
-                    System.out.println("Estas lejos de acertar el numero...");
-                }
+                distancia = distanciaNumeros(adivinando,numero);
+                System.out.println(distancia);
                 
             }
             ++i;
