@@ -53,10 +53,10 @@ public class AdivinarNumero2 {
         int numero, i = 1, adivinando, comparacion, mayor, menor;
         boolean exit = false;
         numero = crearNumero();
-        System.out.println("EL numero es --> " + numero);
+        //System.out.println("El numero es --> " + numero);
         // Jugador 2 trata de adivinar el numero con 5 intentos
-        System.out.println("\n--- Jugador 2 ----\n");
-        System.out.println("Intenta adivinar el numero introducido por el Jugador 1:");
+        System.out.println("\n--- Jugador----\n");
+        System.out.println("Intenta adivinar el numero introducido por el ordenador:");
         do {
             System.out.println("\nLlevas " + i + " intento/s de " + INTENTOS);
             adivinando = adivinarNumero();
