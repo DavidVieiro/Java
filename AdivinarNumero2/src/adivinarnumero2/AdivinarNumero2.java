@@ -26,7 +26,8 @@ public class AdivinarNumero2 {
     // Creamos un modulo para que la maquina cree un numero aleatorio
     static int crearNumero () {
         int numero;
-        
+        // con TreadLocalRandom creamos un numero entero aleatorio
+        System.out.println("La maquina ya ha creado el numero para adivinar, SUERTE!!");
         numero = ThreadLocalRandom.current().nextInt(1, 100);
         
         return numero;
