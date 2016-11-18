@@ -13,12 +13,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
- * @author dam132
+ * @author David Vieiro Pazos (dam132)
  */
 public class AdivinarNumero3 {
-    /**
-     * @param teclado Variable global para la introduccion de datos
-     */
+    
     // Definimos las variables globales
     static BufferedReader teclado = new BufferedReader( new InputStreamReader( System.in ) );
     // Definimos la distacia en constantes
