@@ -16,7 +16,10 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author dam132
  */
 public class AdivinarNumero2 {
-
+    /**
+     * @param teclado Variable global para la introduccion de datos
+     * @param INTENTOS Constante para limitar el numero de intentos del juego
+     */
     // Definimos las variables globales
     static BufferedReader teclado = new BufferedReader( new InputStreamReader( System.in ) );
     // Ponemos el numero de intentos en una constante
@@ -25,7 +28,10 @@ public class AdivinarNumero2 {
     static final int MUY_CERCA = 10;
     static final int CERCA = 20;
     static final int LEJOS = 30;
-    
+    /**
+     * 
+     * @return Devuelve el numero aleatorio entre 1 y 100 creado por la maquina
+     */
     // Creamos un modulo para que la maquina cree un numero aleatorio
     static int crearNumero () {
         int numero;
@@ -35,7 +41,11 @@ public class AdivinarNumero2 {
         
         return numero;
     }
-    
+    /**
+     * 
+     * @return Devuelve el numero que intenta adivinar el Jugador
+     * @throws IOException 
+     */
     // Creamos un modulo para que el jugador 2 introduzca datos
     static int adivinarNumero() throws IOException {
         // inicializamos la variable
@@ -50,16 +60,21 @@ public class AdivinarNumero2 {
         }
         return adivina;
     }
-    
+    /**
+     * 
+     * @param adivinando Se pasa el numero que el Jugador 2 intenta adivinar
+     * @param numero Se pasa el numero que introdujo el Jugador 1
+     * @return Devuelve un mensaje de texto en funcion de lo cerca que esta el Jugador de acertar el numero.
+     */
     // Creamos un modulos para comprobar la distancia entre los dos numeros
     static String distanciaNumeros(int adivinando, int numero){
         String distancia;
         int mayor, menor, comparacion;
-        
+        // Ordenamos los numeros introducidos de mayor a menor y los comparamos
         mayor = Math.max(adivinando, numero);
         menor = Math.min(adivinando, numero);
         comparacion = mayor - menor;
-
+        // Mostramos un mensaje dependiendo de la distancia
         if ( comparacion <= MUY_CERCA ) {
             distancia = "Estas muy cerca de acertar el numero...";
         }
@@ -75,11 +90,14 @@ public class AdivinarNumero2 {
         
         return distancia;
     }
-    
-    static int elJuego() throws IOException {
+    /**
+     * 
+     * @throws IOException 
+     */
+    static void elJuego() throws IOException {
         
         // La maquina crea un numero aleatorio entre el 1 y el 100
-        int juego = 0, numero, i = 1, adivinando;
+        int numero, i = 1, adivinando;
         String distancia;
         boolean exit = false;
         numero = crearNumero();
@@ -106,9 +124,12 @@ public class AdivinarNumero2 {
             System.out.println("\nNo has acertado el numero, vuelve a jugar!");
         }
         
-        return juego;
     }
-    
+    /**
+     * 
+     * @param args
+     * @throws IOException 
+     */
     public static void main(String[] args) throws IOException {
         
         String opcion;
@@ -121,10 +142,8 @@ public class AdivinarNumero2 {
         System.out.println("Se le indicara al Jugador si esta muy cerca de acertar el numero.");
         System.out.println("\nTe gustaria jugar al juego ahora? ( Si / No )");
         
-        // Usamos el TRY CATCH para evitar errores si se introducen otro dato que no sea el que queremos
-        
-            opcion = String.valueOf(teclado.readLine());
-            elegir = opcion.charAt(0);
+        opcion = String.valueOf(teclado.readLine());
+        elegir = opcion.charAt(0);
         
         if (elegir == 's') {
             elJuego();
