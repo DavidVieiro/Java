@@ -13,13 +13,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
- * @author dam132
+ * @author David Vieiro Pazos (dam132)
  */
 public class AdivinarNumero2 {
-    /**
-     * @param teclado Variable global para la introduccion de datos
-     * @param INTENTOS Constante para limitar el numero de intentos del juego
-     */
     // Definimos las variables globales
     static BufferedReader teclado = new BufferedReader( new InputStreamReader( System.in ) );
     // Ponemos el numero de intentos en una constante
