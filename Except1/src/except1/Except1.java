@@ -34,10 +34,10 @@ public class Except1 {
             
         }
         catch (NumberFormatException ex1) {
-            System.out.println("Error de formato numerico --> " + ex1.getMessage() );
+            System.out.println("Error de formato numerico.\nERROR: " + ex1.getMessage() );
         }
         catch (ArithmeticException ex2) {
-            System.out.println("No se puede dividir entre 0 --> " + ex2.getMessage() );
+            System.out.println("No se puede dividir entre 0.\nERROR: " + ex2.getMessage() );
         }
         
         System.out.println("\nFIN DEL PROGRAMA");
