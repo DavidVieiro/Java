@@ -31,7 +31,7 @@ public class Except1 {
             texto = teclado.readLine();
             j = Integer.valueOf(texto);
             System.out.println("Division " + i + " / " + j + " = " + i/j);
-            System.out.println("\nFIN DEL PROGRAMA");
+            
         }
         catch (NumberFormatException ex1) {
             System.out.println("Error de formato numerico --> " + ex1.getMessage() );
@@ -39,6 +39,8 @@ public class Except1 {
         catch (ArithmeticException ex2) {
             System.out.println("No se puede dividir entre 0 --> " + ex2.getMessage() );
         }
+        
+        System.out.println("\nFIN DEL PROGRAMA");
         
     }
     
