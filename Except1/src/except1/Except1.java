@@ -17,7 +17,7 @@ public class Except1 {
     
     static BufferedReader teclado = new BufferedReader( new InputStreamReader( System.in ) );
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         
         String texto;
         int i , j;
@@ -38,6 +38,9 @@ public class Except1 {
         }
         catch (ArithmeticException ex2) {
             System.out.println("No se puede dividir entre 0.\nERROR: " + ex2.getMessage() );
+        }
+        catch (IOException ex3) {
+            System.out.println("Se ha producido un error...\nERROR: " + ex3.getMessage() );
         }
         
         System.out.println("\nFIN DEL PROGRAMA");
