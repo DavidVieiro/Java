@@ -32,6 +32,8 @@ public class PruebaScanner1 {
         catch (Exception ex2) {
             System.out.println("Se ha producido un error inesperado");
             System.out.println("ERROR: " + ex2);
+            // muestra la linea en la que se encuentra el error
+            ex2.printStackTrace();
         }
         // finally {} se ejecutaria siempre
     }
