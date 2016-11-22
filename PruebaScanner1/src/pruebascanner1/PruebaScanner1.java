@@ -17,6 +17,7 @@ public class PruebaScanner1 {
     public static void main(String[] args) {
         // Se introducen los datos
         Scanner reader = new Scanner(System.in); // creacion del objeto reader
+        //Scanner reader = null;
         System.out.println("Introduce la velocidad en Km/h para convertirla a m/s:");
         
         try {
@@ -29,11 +30,15 @@ public class PruebaScanner1 {
             System.out.println("\nDatos introducidos incorrectos. Ejemplo: 50,5");
             System.out.println("\nERROR: " + ex1);
         }
-        catch (Exception ex2) {
-            System.out.println("Se ha producido un error inesperado");
-            System.out.println("ERROR: " + ex2);
+        catch (NullPointerException ex2) {
+            System.out.println("\nEl objeto no existe...");
+            System.out.println("\nERROR: " + ex2);
+        }
+        catch (Exception ex3) {
+            System.out.println("\nSe ha producido un error inesperado");
+            System.out.println("\nERROR: " + ex3);
             // muestra la linea en la que se encuentra el error
-            ex2.printStackTrace();
+            ex3.printStackTrace();
         }
         // finally {} se ejecutaria siempre
     }
