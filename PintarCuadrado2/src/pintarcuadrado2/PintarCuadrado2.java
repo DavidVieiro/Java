@@ -9,7 +9,6 @@ package pintarcuadrado2;
 // Recibe el valor del lado y devuelve el area del cuadrado
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
@@ -17,48 +16,62 @@ import java.io.InputStreamReader;
  * @author dam132
  */
 public class PintarCuadrado2 {
-    static int pintarCuadrado (int area) throws IOException {
-        int limite = 15; // tamaño maximo no permitido para dibujar el cuadrado
-        int x = 0; // lado del cuadrado
+    // Definimos la variable LIMITE como global y estatica.
+    // tamaño maximo no permitido para dibujar el cuadrado
+    public static final int LIMITE = 15;
+    
+    static int pintarCuadrado (int area) {
+        int x; // lado del cuadrado
         int i; // primer incremental
         int n; // segundo incremental
         
         // introducir el InputStreamReader - BufferReader
         InputStreamReader flujo = new InputStreamReader(System.in);
         BufferedReader teclado = new BufferedReader(flujo);
-        System.out.println("Introduce el tamaño del cuadrado a dibujar. Lado menor que " + limite + ".");
+        
         // usamos el try{}catch(){} para evitar errores con otro tipo de dato.
         try {
+            System.out.println("Introduce el tamaño del cuadrado a dibujar. Lado menor que " + LIMITE + ".");
             x = Integer.parseInt(teclado.readLine());
-        }
-        catch ( NumberFormatException e ) {
-            System.out.println("El dato introducido no es correcto. Usa numeros enteros.");
-        }
-        // bucle dentro de bucle para crear el cuadrado.
-        if ( x < limite && x > 0 ) {
-            for ( i = 1; i <= x; ++i ) {
-                for ( n = 1; n <= x; ++n ) {
-                    System.out.print("*"); // print no hace salto de linea
+            
+            // bucle dentro de bucle para crear el cuadrado.
+            if ( x <= LIMITE && x > 0 ) {
+                for ( i = 1; i <= x; ++i ) {
+                    for ( n = 1; n <= x; ++n ) {
+                        System.out.print("*"); // print no hace salto de linea
+                    }
+                    System.out.println(""); // se introduce aqui el println para que haga el salto de linea
                 }
-                System.out.println(""); // se introduce aqui el println para que haga el salto de linea
             }
+            else {
+                System.out.println("Introduce un valor correcto ( 1 - " + LIMITE + " ).");
+            }
+            // calculo del area del cuadrado
+            area = x*x;
         }
-        else {
-            System.out.println("Introduce un valor correcto ( 1 - " + limite + " ).");
+        catch ( NumberFormatException ex1 ) {
+            System.out.println("\nEl dato introducido no es correcto. Usa numeros enteros.");
+            System.out.println("ERROR: " + ex1);
         }
-        // calculo del area del cuadrado
-        area = x*x;
+        catch ( Exception ex2 ) {
+            System.out.println("\nError inesperado...");
+            System.out.println("ERROR: " + ex2);
+            ex2.printStackTrace();
+        }
         return area;
     }
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         // variables
         int lado;
         int area = 0;
         // llamada al metodo / funcion
         lado = pintarCuadrado(area);
         // mensaje de salido
-        System.out.println("El area del cuadrado es: " + lado);
+        if ( lado != 0 ) {
+            System.out.println("El area del cuadrado es: " + lado);
+        }
+                
     }
     
 }
