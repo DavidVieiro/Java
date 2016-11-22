@@ -20,7 +20,8 @@ public class PintarCuadrado2 {
     // tamaño maximo no permitido para dibujar el cuadrado
     public static final int LIMITE = 15;
     
-    static int pintarCuadrado (int area) {
+    static int pintarCuadrado () {
+        int area = 0;
         int x; // lado del cuadrado
         int i; // primer incremental
         int n; // segundo incremental
@@ -63,13 +64,12 @@ public class PintarCuadrado2 {
     
     public static void main(String[] args) {
         // variables
-        int lado;
-        int area = 0;
+        int resArea;
         // llamada al metodo / funcion
-        lado = pintarCuadrado(area);
+        resArea = pintarCuadrado();
         // mensaje de salido
-        if ( lado != 0 ) {
-            System.out.println("El area del cuadrado es: " + lado);
+        if ( resArea != 0 ) {
+            System.out.println("El area del cuadrado es: " + resArea);
         }
                 
     }
