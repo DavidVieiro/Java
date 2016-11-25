@@ -35,7 +35,7 @@ public class ExcepcionesMedia1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int i = 1, numeroEntero = 0, suma = 0, media;
+        int i = 1, numeroEntero, suma = 0, media;
         boolean correcto = false;
         System.out.println("Se va a calcular la media de 5 numeros entero introducidos");
         try {
