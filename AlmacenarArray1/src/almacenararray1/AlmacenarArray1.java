@@ -13,6 +13,7 @@ import java.io.InputStreamReader;
  * Leer y almacenar 15 numeros
  * - Mostrarlos en orden inverso
  * - Permitir hacer una consulta si existe un nº determinado
+ * - Buscar y mostrar el mayor
  * 
  * a) Crear los metodos
  * - Mostrar datos
@@ -30,7 +31,7 @@ public class AlmacenarArray1 {
      */
     public static void main(String[] args) throws IOException {
         
-       int numero, tabla[];
+       int numero, buscarNumero, tabla[];
        tabla = new int [LIMITE];
        
        for ( int i = 0; i < LIMITE ; ++i ) {
@@ -43,6 +44,14 @@ public class AlmacenarArray1 {
        for (int i = LIMITE-1 ; i >= 0; --i ) {
            System.out.println("numero " + tabla[i]);
        }
+       
+       System.out.println("Introduce un numero que quieres buscar:");
+       buscarNumero = Integer.parseInt(teclado.readLine());
+       
+       for ( ; ; ) {
+           
+       }
+       
     }
     
 }
