@@ -40,6 +40,8 @@ public class LlenarMatriz1 {
         posicion = Integer.parseInt(teclado.readLine());
         
         // devuelve la posicion en la que se ha encontrado el numero
+        // hay que ordenarlo primero
+        Arrays.sort(numeros);
         int buscar1 = Arrays.binarySearch(numeros, posicion);
         
         if ( buscar1 >= 0) {
@@ -48,9 +50,8 @@ public class LlenarMatriz1 {
         else {
             System.out.println("El numero que buscas no existe");
         }
-        
-        System.out.println("- No ordenado - ");
-        
+        // --------------------------------------------------
+        System.out.println("\n\n- No ordenado - ");
         // for-loop
         for (String matriz1 : matriz) {
             System.out.println("Dato " + matriz1);
