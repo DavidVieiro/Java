@@ -120,6 +120,21 @@ public class UtilidadesArrays1 {
             tabla[tabla.length - i - 1] = temp;
         }
     }
+    /**
+     * 
+     * @param tabla 
+     */
+    public static void invertirTabla2 ( int[] tabla ) {
+        // Esto es un ejemplo de otro modulo para invertir la tabla
+        int tabla2[];
+        int a = tabla.length;
+        
+        tabla2 = Arrays.copyOf(tabla, tabla.length);
+        for ( int i = 0; i < tabla.length; i++ ) {
+            a--;
+            tabla[i] = tabla2[a];
+        }
+    }
     
     /**
      * @param args the command line arguments
