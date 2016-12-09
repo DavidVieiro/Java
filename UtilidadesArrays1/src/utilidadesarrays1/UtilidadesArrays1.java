@@ -93,7 +93,7 @@ public class UtilidadesArrays1 {
         int mayor;
         
         Arrays.sort(tabla);
-        mayor = tabla[LIMITE-1];
+        mayor = tabla[tabla.length-1];
         
         return mayor;
     }
@@ -114,8 +114,7 @@ public class UtilidadesArrays1 {
     public static void invertirTabla( int[] tabla ) {
         int temp;
         
-        for(int i = 0; i < tabla.length / 2; i++)
-        {
+        for(int i = 0; i < tabla.length / 2; i++){
             temp = tabla[i];
             tabla[i] = tabla[tabla.length - i - 1];
             tabla[tabla.length - i - 1] = temp;
