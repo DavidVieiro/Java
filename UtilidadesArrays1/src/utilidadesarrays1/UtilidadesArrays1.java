@@ -98,14 +98,20 @@ public class UtilidadesArrays1 {
         
         return mayor;
     }
-    
+    /**
+     * 
+     * @param tabla 
+     */
     public static void mostrarDatos( int[] tabla ) {
         System.out.println("\n\n-- Mostrando datos de la tabla --");
         for ( int z = 0; z < tabla.length; ++z ) {
             System.out.println("Dato " + tabla[z]);
         }
     }
-    
+    /**
+     * 
+     * @param tabla 
+     */
     public static void invertirTabla( int[] tabla ) {
         int temp;
         
