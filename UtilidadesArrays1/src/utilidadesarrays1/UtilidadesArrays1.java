@@ -9,7 +9,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * Leer y almacenar 15 numeros: crear metodos
@@ -121,8 +120,6 @@ public class UtilidadesArrays1 {
             tabla[i] = tabla[tabla.length - i - 1];
             tabla[tabla.length - i - 1] = temp;
         }
-        
-        
     }
     
     /**
