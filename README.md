@@ -1,3 +1,3 @@
 # Java
 
-Ejercicios de Programación y Contornos de Desarrollo del Ciclo Superior de Programación de Aplicaciones Multiplataforma.
+Ejercicios de Programación y Contornos de Desarrollo del Ciclo Superior de Programación de Aplicaciones Multiplataforma. Primer Trimestre.
